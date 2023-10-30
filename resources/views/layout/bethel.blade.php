@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ chart.js"></script>
 
    
 
@@ -94,6 +94,82 @@ text-align:center;
 color:#fff;
 
 }
+/** Solar System ***/
+.solar-system
+{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transform:scale(0.55);
+
+}
+.earth-circle
+{
+  width:450px;
+  height:450px;
+  border:2px solid #555555;
+  content:"";
+  border-radius:300px;
+}
+.sun
+{
+  position:absolute;
+  width:100px;
+  height:100px;
+  background:#ffff00;
+  border-radius:100px;
+  box-shadow:0 0 50px #ffff00;
+}
+.earth
+{
+  position:absolute;
+  width:50px;
+  height:50px;
+  background:green;
+  top:-25px;
+  border-radius:100px;
+  animation:18s rotate linear infinite;
+  transform-origin:30px 250px;
+
+
+}
+.moon-circle
+{
+  position:absolute;
+  width:110px;
+  height:110px;
+  border:2px solid #555555;
+  top:-30px;
+  left:-30px;
+  content:"";
+  border-radius:110px;
+
+}
+.moon
+{
+  position:absolute;
+  width:20px;
+  height:20px;
+  background:#ccc;
+  top:-40px;
+  left:15px;
+  border-radius:50px;
+  animation:1.5s rotate linear infinite;
+  transform-origin:10px 65px;
+
+}
+.moon.no-background
+{
+  background:#000;
+}
+@keyframes rotate
+{
+  to
+  {
+    transform:rotate(360deg);
+  }
+}
 footer.no-background
 {
   color:#000;
@@ -173,15 +249,19 @@ footer.no-background
         //Get the body element 
         const body=document.body;
         const footer=document.getElementById("footer");
+        const moon=document.getElementById("moon")
         //Toggle the 'no-background' class on the body element 
        if(backgroundOn)
        {
         body.classList.add('no-background');
         footer.classList.add('no-background');
+        moon.classList.add('no-background');
+        
        }
        else{
         body.classList.remove('no-background');
         footer.classList.remove('no-background');
+        moon.classList.remove('no-background');
        }
        //Update the background state
        backgroundOn=!backgroundOn;

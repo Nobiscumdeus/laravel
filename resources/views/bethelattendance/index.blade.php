@@ -2,6 +2,20 @@
 @section('title','Bethel Tabernacle')
 @section('content')
 
+    
+   
+<h5 class="text-center"> <i>Our God sitteth upon the circle of the earth --Isaiah 40:22 </i> </h5>
+<div class="solar-system">
+  
+    
+    <div class="earth-circle" id="earth-circle"></div>
+    <div class="sun"></div>
+    <div class="earth">
+        <div class="moon-circle"></div>
+        <div class="moon" id="moon"></div>
+    </div>
+</div>
+
 <div class="col-md-6 offset-3 my-3">
     <div class="row">
         <div class="col">
