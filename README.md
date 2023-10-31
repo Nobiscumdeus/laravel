@@ -1,10 +1,13 @@
-<h3> Chasfat Projects with Laravel Framework </h3>
-<p>
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects </p>
-<p>
-<h3> Projects </h3>
+<h1> Chasfat Projects with Laravel Framework </h1>
+<hr/>
+<div>
+Below are Projects I have created with the Laravel Framework , Well document and will worth taking your time to see 
+</div>
+<div>
+<h3> Lists of Projects </h3>
 <ul>
-<li> A simple Crud Application </li>
-<li> A Attendance Converter to Chart Application </li>
+   <li> A Simple Crud Application </li>
+   <li> An App that Converts Church Attendance to Charts </li>
+   <li> A Content Management System for E-Learning related to Medicine <li>
 </ul>
-</p>
+</div>

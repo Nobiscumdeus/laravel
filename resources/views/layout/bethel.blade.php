@@ -9,12 +9,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/ chart.js"></script>
-
-   
-
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style type="text/css">
+    
     *{
         margin:0;
         padding:0;
@@ -175,6 +172,12 @@ footer.no-background
   color:#000;
 }
     </style>
+
+
+   <!--- Asset Files ----->
+
+    
+    
     <title>@yield('title') </title>
   
 </head>
