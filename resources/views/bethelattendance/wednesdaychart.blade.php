@@ -130,15 +130,16 @@ fetch('/bethelattendance/wednesdaychart', {
                 x:{
                     ticks:{
                         font:{
-                            size:20
+                            size:16
                         }
                     }
                 },
                 y: {
                     beginAtZero: true,
                     ticks:{
+                        stepSize:5,
                         font:{
-                            size:20
+                            size:16
                         }
                     }
                 },

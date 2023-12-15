@@ -57,14 +57,30 @@ navbar-toggler-icon{
     {
         display:none;
         opacity:0;
-        transform:translateY(-20px);
+       /** transform:translateY(-20px); **/
         transition:opacity 2s ease-in,transform 2s ease;
     }
     .dayForm.active
     {
+      /**
         display:block;
         opacity:1;
         transform:translateY(0);
+        **/
+       display:block;
+       position: fixed;;
+       top:0%;
+       left:-9%;
+       transform:translate(-50%,-50%);
+       opacity:1;
+       box-shadow:0 0 10px rgba(0,0,0,0.3);
+     
+       z-index:1;
+    
+   
+  
+        
+        
     }
     /* CSS to change the color of the Navbar Toggler button and its lines */
 .navbar-dark .navbar-toggler {
@@ -170,6 +186,24 @@ color:#fff;
 footer.no-background
 {
   color:#000;
+}
+#sundayForm,#wednesdayForm
+{
+  transform:scale(0.90);
+}
+#sundaytimes,#wednesdaytimes
+{
+  font-size:30px;
+  color:red;
+  width:50px;
+  height:50px;
+  border:2px solid #000;
+  border-radius:50%;
+}
+#sundaytimes:hover,#wednesdaytimes:hover{
+  cursor:pointer;
+ 
+
 }
     </style>
 
@@ -281,9 +315,48 @@ footer.no-background
 
 
 
+//State of form used by both the sunday and wednesday closePopups 
+/**
+var isPopupVisible=true;
 
 
+function sundayclosePop()
+{
+  
+  var sundayForm=document.getElementById("sundayForm"); //Collect the form/popup 
+  isPopupVisible=!isPopupVisible;
+  if(isPopupVisible)
 
+  {
+    sundayForm.style.opacity='0';
+  sundayForm.style.display='none';
+
+  }else
+  {
+    sundayForm.style.opacity='1';
+  sundayForm.style.display='block';
+
+  }
+  /**
+  sundayForm.style.opacity='0';
+  setTimeout(function(){
+
+    sundayForm.style.display='none';
+  },300)
+  
+}
+function wednesdayclosePop()
+{
+
+  var wednesdaypopup=document.getElementById("wednesdaytimes");
+  var wednesdayForm=document.getElementById("wednesdayForm");
+  wednesdayForm.style.opacity='0';
+  setTimeout(function(){
+    wednesdaypopup.style.display='none';
+  },300)
+}
+
+**/
 
     
     function toggleForm(day)
@@ -293,12 +366,19 @@ footer.no-background
 
         if(day==='sunday')
         {
-            sundayForm.classList.add('active');
+            //sundayForm.classList.add('active');
+            sundayForm.classList.toggle('active');
             wednesdayForm.classList.remove('active');
+
+           
+
         }
+      
         else if(day==='wednesday')
         {
-            wednesdayForm.classList.add('active');
+          //  wednesdayForm.classList.add('active');
+          wednesdayForm.classList.toggle('active');
+
             sundayForm.classList.remove('active');
         }
 

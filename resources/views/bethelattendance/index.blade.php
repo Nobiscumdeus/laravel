@@ -42,7 +42,9 @@
         <div class="col-md-5 offset-md-4 my-3 dayForm" id="sundayForm">
             <div class="card">
             <div class="card-header">
-               <h2> Attendance for Sundays </h2>
+           <!--    <h2> Attendance for Sundays </h2> -->
+           <div class="row"> <div class="col-md-9"> <h2> Attendance for Sundays </h2></div><div class="col-md-3 sundaytimes" id="sundaytimes" onclick="sundayclosePop()"> &times;</div></div>
+             
               
             </div>
             <div class="card-body">
@@ -110,7 +112,8 @@
         <div class="col-md-5 offset-md-4 my-3 dayForm" id="wednesdayForm">
             <div class="card">
                 <div class="card-header">
-                    <h2> Attendance for Wednesdays </h2>
+                   <!-- <h2> Attendance for Wednesdays </h2> -->
+                   <div class="row"> <div class="col-md-9"> <h2> Attendance for Wednesdays</h2></div><div class="col-md-3 wednesdaytimes" id="wednesdaytimes" onclick="wednesdayclosePop()"> &times;</div></div>
                 </div> <!-- End  of card header -->
           <div class="card-body">
                 <form class="form py-2"  method="POST" action="{{route('bethelattendancewednesday.store')}}" id="wednesdayForm">
