@@ -113,12 +113,12 @@ fetch('/bethelattendance/sundaychart', {
 ];
     // Create the line chart
     var lineCtx = document.getElementById('lineChart').getContext('2d');
-    var uniqueGeneralDates=[...new Set(data.map(entry=>entry.date))];
+    
     var lineChart = new Chart(lineCtx, {
         type: 'line',
         data: {
-           // labels: data.map(entry => entry.date),
-           labels:uniqueGeneralDates;
+           labels: data.map(entry => entry.date),
+        
             datasets: [{
                 label: 'General Attendance',
                 data: data.map(entry => entry.total),

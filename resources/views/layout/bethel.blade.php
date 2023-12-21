@@ -23,6 +23,7 @@
        
         background:#333;
         color:#fff;
+        position:relative;
     }
     body.no-background
     {
@@ -59,6 +60,7 @@ navbar-toggler-icon{
         opacity:0;
        /** transform:translateY(-20px); **/
         transition:opacity 2s ease-in,transform 2s ease;
+        max-height:90px;
     }
     .dayForm.active
     {
@@ -68,7 +70,7 @@ navbar-toggler-icon{
         transform:translateY(0);
         **/
        display:block;
-       position: fixed;;
+       position: absolute;
        top:0%;
        left:-9%;
        transform:translate(-50%,-50%);
@@ -189,7 +191,8 @@ footer.no-background
 }
 #sundayForm,#wednesdayForm
 {
-  transform:scale(0.90);
+  transform:scale(0.9);
+  max-height:85vh;
 }
 #sundaytimes,#wednesdaytimes
 {
@@ -240,6 +243,13 @@ footer.no-background
               </li>
                <li class="nav-item">
                 <a class="nav-link active text-light" aria-current="page" href="{{route('bethelattendance.wednesdaychart')}}">Wednesday Charts</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link active text-light" aria-current="page" href="{{route('bethelattendance.sundaytable')}}">Sunday Table</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active text-light" aria-current="page" href="{{route('bethelattendance.wednesdaytable')}}">Wednesday Table</a>
               </li>
               <li class="nav-item">
               <i id="backgroundToggleIcon" class="fas fa-adjust fa-2x "></i>

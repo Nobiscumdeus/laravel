@@ -49,8 +49,9 @@ Route::get('/bethelattendance/wednesdaychart', 'App\Http\Controllers\WednesdayCh
 Route::get('/bethelattendance/sunday', 'App\Http\Controllers\SundayChartController@index')->name('bethelattendance.sundaychart');
 Route::get('/bethelattendance/wednesday', 'App\Http\Controllers\WednesdayChartController@index')->name('bethelattendance.wednesdaychart');
 
+Route::get('/bethelattendance/sundaytable','App\Http\Controllers\SundayChartController@sundaytable')->name('bethelattendance.sundaytable');
+Route::get('/bethelattendance/wednesdaytable','App\Http\Controllers\WednesdayChartController@wednesdaytable')->name('bethelattendance.wednesdaytable');
 
-//School Application 
 Route::get('/school',function(){
     return view('school.admin');
 });

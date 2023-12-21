@@ -23,7 +23,9 @@ class SundaybethelattendanceController extends Controller
             'converts' => 'required|numeric',
             'total' => 'required|numeric',
             'message' => 'required|string',
-            'minister' => 'required|string'
+            'minister' => 'required|string',
+            'date'=>'required|date',
+
         ]);
         //Create a new attendance instance and populate with the data 
         $attendance = new sundaybethelattendance([
@@ -34,7 +36,9 @@ class SundaybethelattendanceController extends Controller
             'converts' => $request->input('converts'),
             'total' => $request->input('total'),
             'message' => $request->input('message'),
-            'minister' => $request->input('minister')
+            'minister' => $request->input('minister'),
+            'date'=>$request->input('date'),
+
         ]);
 
         //Save the attendance data 

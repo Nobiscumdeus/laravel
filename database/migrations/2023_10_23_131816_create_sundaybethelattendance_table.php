@@ -21,6 +21,7 @@ return new class extends Migration
             $table->integer('total')->default(0);
             $table->string('message')->nullable();
             $table->string('minister')->nullable();
+            $table->date('date')->nullable();
             $table->timestamps();
         });
     }

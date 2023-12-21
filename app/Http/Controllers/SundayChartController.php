@@ -28,4 +28,20 @@ class SundayChartController extends Controller
 
         return response()->json($attendanceData);
     }
+    public function sundaytable()
+    {
+        //Retrieving the attendance from the database 
+        $sundayData = sundaybethelattendance::all();
+
+        //Processing the date 
+        $sundayData->each(function ($item)
+        {
+            $item->date=Carbon::parse($item->date)->format('l j, F Y');
+
+        });
+        return view('bethelattendance.sundaytable',compact('sundayData'));
+
+       
+
+    }
 }

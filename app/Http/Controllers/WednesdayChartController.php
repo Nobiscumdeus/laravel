@@ -26,4 +26,24 @@ class WednesdayChartController extends Controller
         return response()->json($data);
 
     }
+
+    public function wednesdaytable()
+    {
+        //Retrieving the attendance from the database 
+        $wednesdayData = wednesdaybethelattendance::all();
+
+        //Processing the date 
+        $wednesdayData->each(function ($item)
+        {
+            $item->date=Carbon::parse($item->date)->format('l j, F Y');
+
+        });
+        return view('bethelattendance.wednesdaytable',compact('wednesdayData'));
+
+       
+
+    }
+
+
+
 }
