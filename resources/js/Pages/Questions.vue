@@ -108,19 +108,19 @@
 
            
 
-             Inertia.post('/questions', {
-  question: createdQuestion.value,
-  answers: newAnswers.value
-}).then(() => {
-  // Navigate to a different page after the request succeeds 
-  Inertia.visit('/questions');
+                Inertia.post('/questions', {
+            question: createdQuestion.value,
+            answers: newAnswers.value
+            }).then(() => {
+            // Navigate to a different page after the request succeeds 
+            Inertia.visit('/questions');
 
-  // Reset question and answers values after navigation
-  router.on('success', () => {
-    createdQuestion.value = null;
-    newAnswers.value = [];
-  });
-});
+            // Reset question and answers values after navigation
+            router.on('success', () => {
+                createdQuestion.value = null;
+                newAnswers.value = [];
+            });
+            });
 
         }
 
@@ -160,24 +160,36 @@
 
         }
 
-        /**
+      function updateAnswers(){
+        router.put('/answers',
+        answers.value
+        )
+      }
 
-        function updateAnswers(){
-            router.put('/answers,
-            answers.value,
-           
-            )
-        }
 
-        **/
+
 
         const editQuestionModal=ref(false);
         const questionForEdit=ref(null);
 
-        function editQuestion(){
-        questionForEdit.value=props.question[index]
-            alert('Edit Question here...');
+        function editQuestion(index){
+        questionForEdit.value=props.questions[index]
+       
+        }
 
+        function updateQuestion(){
+            router.put('/questions',
+            questionForEdit.value
+            )
+        }
+
+        //delete Question
+
+        function deleteQuestion(id){
+            router.on('before',()=>{
+                return confirm('You are about to delete a record, are you sure?');
+            });
+            router.delete('/questions/'+id);
         }
 
 </script>
@@ -250,7 +262,7 @@
 
 <div class="flex items-center space-x-4 mt-4">
    
-    <button @click="addNewAnswer" v-if="newAnswers.length<4" class="bg-transparent text-white font-bold py-2 px-4 font-bold font-2xl hover:bg-blue-400 hover:font-3xl hover:rounded"> + </button>
+    <button @click="addNewAnswer" v-if="newAnswers.length<4" class="bg-transparent text-white font-bold py-2 px-4 font-2xl hover:bg-blue-400 hover:font-3xl hover:rounded"> + </button>
     <button @click="submitQuestion" v-if="newAnswers.length>3" class="bg-green-500 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"> Submit </button>
 </div>
 
@@ -299,6 +311,8 @@
 
 
     <!--- Just using the modal again to view question, in the same teleport --->
+     
+     
      <modal :show="showViewQuestionModal"  @close="showViewQuestionModal = false" >
 
         <template #header>
@@ -333,7 +347,7 @@
     <div class="flex items-center space-x-4 mt-4">
    
     
-    <button @click="submitQuestion"  class="bg-green-500 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"> Save </button>
+   
 </div>
 
 
@@ -343,6 +357,32 @@
 
 
         </template>
+     </modal>
+
+
+
+
+     <!---- Modal for Editing Question ---->
+     <modal :show="editQuestionModal" @close="editQuestionModal=false">
+            <template #header>
+            </template>
+
+            <template #success>
+            </template>
+
+            <template #body>
+            <div class="mb-6">
+      <input type="text" v-model="questionForEdit.question" class="w-full text-black font-2xl border border-gray-300 rounded-md py-2 px-3 placeholder-gray-400 focus:outline-none focus:border-blue-500" placeholder="Enter Question">
+    </div>
+            
+
+    <div class="flex items-center space-x-4 mt-4">
+   
+        <button @click="editQuestionModal=true,editQuestion(index)"  class="bg-yellow-500 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"> Edit </button>
+    </div>
+
+
+            </template>
      </modal>
 
    </Teleport>
@@ -403,7 +443,7 @@
       Edit
     </button>
     <!-- Delete button -->
-    <button type="button" class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-red-600 bg-red-100 hover:bg-red-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 ml-2">
+    <button @click="deleteQuestion(question.id)" type="button" class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-red-600 bg-red-100 hover:bg-red-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 ml-2">
       Delete
     </button>
   </span>
