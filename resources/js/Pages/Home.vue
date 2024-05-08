@@ -24,7 +24,7 @@ const page=usePage()
             <div class='hidden md:block'>
                 <div class='ml-10 flex items-baseline space-x-4'>
                 
-<Link href='/questions' :class="{'text-gray-300 px-3 py-2 rounded-md text-sm bg-gray-700': $page.url === '/dashboard', 'text-gray-300 px-3 py-2 rounded-md text-sm hover:bg-gray-700': $page.url !== '/dashboard'}"> Dashboard </Link>
+<Link href='/dashboard' :class="{'text-gray-300 px-3 py-2 rounded-md text-sm bg-gray-700': $page.url === '/dashboard', 'text-gray-300 px-3 py-2 rounded-md text-sm hover:bg-gray-700': $page.url !== '/dashboard'}"> Dashboard </Link>
 <Link href='/questions' :class="{'text-gray-300 px-3 py-2 rounded-md text-sm bg-gray-700': $page.url === '/questions', 'text-gray-300 px-3 py-2 rounded-md text-sm hover:bg-gray-700': $page.url !== '/questions'}">Create Questions</Link>
 <Link href='/quiz' :class="{'text-gray-300 px-3 py-2 rounded-md text-sm bg-gray-700': $page.url === '/quiz', 'text-gray-300 px-3 py-2 rounded-md text-sm hover:bg-gray-700': $page.url !== '/quiz'}"> Take Quiz</Link>
 <Link href='/results' :class="{'text-gray-300 px-3 py-2 rounded-md text-sm bg-gray-700': $page.url === '/results', 'text-gray-300 px-3 py-2 rounded-md text-sm hover:bg-gray-700': $page.url !== '/results'}"> Results</Link>

@@ -131,6 +131,8 @@
         });
         console.log(props);
 
+
+
         function viewQuestion(index){
 
         showViewQuestionModal.value=true;

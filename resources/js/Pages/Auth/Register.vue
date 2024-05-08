@@ -29,6 +29,7 @@ const submit = () => {
     <AuthenticationCard>
         <template #logo>
             <AuthenticationCardLogo />
+             <h2 class="text-3xl font-bold mt-3"> Register here... </h2>
         </template>
 
         <form @submit.prevent="submit">
