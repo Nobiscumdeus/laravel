@@ -1,5 +1,6 @@
 #Ignore vendor and nore_modules directory
-/vendor
+vendor/
+
 /node_modules/
 
 #Ignore environment files
@@ -33,7 +34,6 @@ Thumbs.db
 Icon
 
 #ignore files generatedby the artisan command line tool
-/artisan
 
 #Ignore npm debug log
 npm-debug.log
